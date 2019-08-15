@@ -1,0 +1,53 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(../images/throne-background.png);
+    color: silver;
+    font-family: 'Raleway', sans-serif;
+    font-size: 20px;
+}
+
+header {
+    max-width: 960px;
+    margin: 0 auto;
+    color: silver;
+    text-align: center;
+    font-family: 'Cinzel', serif;
+    font-size: 56px;
+    margin-bottom: 20px;
+}
+
+#got-logo {
+    width: 575px;
+    margin: 0 auto;
+}
+
+/* game content */
+
+#main-content {
+    background-color: #615853;
+    opacity: 0.8;
+    max-width: 800px;
+    margin: 0 auto;
+    color: silver;
+    border-radius: 10px;
+    text-align: center;
+    height: 420px;
+    padding: 30px;
+}
+
+#start-button {
+    font-family: 'Raleway', sans-serif;
+    font-size: 20px;
+    height: 45px;
+    width: 85px;
+    margin: 15px;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+#time-remaining, .question, .answer, #end-game {
+    display: none;
+}

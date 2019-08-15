@@ -11,19 +11,28 @@
 
     <!-- css stylesheet -->
     <link rel="stylesheet" href="assets/css/style.css" />
+
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Cinzel|Raleway&display=swap" rel="stylesheet">
   </head>
 
   <body>
     <header>
-      Trivia Game!
+      <img src="assets/images/file-logo-game-of-thrones-png-1500.png" alt="GOT-logo" id="got-logo"/>
+      <h1>Trivia Game</h1>
     </header>
 
     <div id="main-content">
-      <div class="time-remaining">
+      <div id="start-game">
+        <h3>Are you a true Game of Thrones fan? Will you accept this test of your loyalty?</h3>
+        <button id="start-button">Begin</button>
+      </div>
+
+      <div id="time-remaining">
         Time Remaining: <span id="time-remaining-text"></span>
       </div>
 
-      <div id="question-1">
+      <div id="question-1" class="question">
         <h3 class="trivia-question">
           Lorem ipsum dolor sit amet consectetur adipisicing elit.
         </h3>
@@ -42,11 +51,13 @@
         </p>
       </div>
 
-      <div id="answer-1">
+      <div id="answer-1" class="answer">
+        <p class="correct-answer">Correct!</p>
+        <p class="incorrect-answer">The correct answer was: Lorem ipsum</p>
         <img src="" />
       </div>
 
-      <div id="question-2">
+      <div id="question-2" class="question">
         <h3 class="trivia-question">
           Lorem ipsum dolor sit amet consectetur adipisicing elit.
         </h3>
@@ -65,11 +76,11 @@
         </p>
       </div>
 
-      <div id="answer-2">
+      <div id="answer-2" class="answer">
         <img src="" />
       </div>
 
-      <div id="question-3">
+      <div id="question-3" class="question">
         <h3 class="trivia-question">
           Lorem ipsum dolor sit amet consectetur adipisicing elit.
         </h3>
@@ -88,11 +99,11 @@
         </p>
       </div>
 
-      <div id="answer-3">
+      <div id="answer-3" class="answer">
         <img src="" />
       </div>
 
-      <div id="question-4">
+      <div id="question-4" class="question">
         <h3 class="trivia-question">
           Lorem ipsum dolor sit amet consectetur adipisicing elit.
         </h3>
@@ -111,35 +122,45 @@
         </p>
       </div>
 
-      <div id="answer-4">
+      <div id="answer-4" class="answer">
         <img src="" />
       </div>
 
-
-      <div id="question-5">
+      <div id="question-5" class="question">
         <h3 class="trivia-question">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Complete this famous line: "When you play the Game of Thrones..."
         </h3>
 
         <p class="multiple-choice" class="incorrect-choice">
-          A) Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          A) you fly, or you fry. 
+        </p>
+        <p class="multiple-choice" class="incorrect-choice">
+          B) everyone is your enemy. 
         </p>
         <p class="multiple-choice" class="correct-choice">
-          B) Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          C) you win, or you die.
         </p>
         <p class="multiple-choice" class="incorrect-choice">
-          C) Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        </p>
-        <p class="multiple-choice" class="incorrect-choice">
-          D) Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          D) you answer to no one. 
         </p>
       </div>
 
-      <div id="answer-5">
+      <div id="answer-5" class="answer">
         <img src="" />
       </div>
-      
+
+      <div id="end-game">
+        <p>All done! Here's how you did:</p>
+        <p>Correct: <span id="total-correct-text"></span></p>
+        <p>Incorrect: <span id="total-incorrect-text"></span></p>
+        <p>Unanswered: <span id="total-unanswered-text"></span></p>
+        <p id="winner-text">You are truly loyal to the Game of Thrones. It is known.</p>
+        <p id="middle-text">Hmm, you are off to an okay start. Will you take another opportunity to prove your loyalty?</p>
+        <p id="loser-text">You are not as loyal to the Game of Thrones as I once believed.</p>
+        <button id="restart-game">Try again?</button>
+      </div>
     </div>
+    <!-- link to jQuery -->
 
     <!-- link to javascript -->
     <script src="assets/javascript/app.js"></script>
