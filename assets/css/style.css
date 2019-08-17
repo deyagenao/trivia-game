@@ -7,6 +7,7 @@ body {
     color: silver;
     font-family: 'Raleway', sans-serif;
     font-size: 20px;
+    line-height: 44px;
 }
 
 header {
@@ -28,7 +29,7 @@ header {
 
 #main-content {
     background-color: #615853;
-    opacity: 0.8;
+    opacity: 0.85;
     max-width: 800px;
     margin: 0 auto;
     color: silver;
@@ -36,6 +37,11 @@ header {
     text-align: center;
     height: 420px;
     padding: 30px;
+}
+
+h3 {
+    font-size: 24px;
+    line-height: 40px;
 }
 
 #start-button {
@@ -46,6 +52,16 @@ header {
     margin: 15px;
     border-radius: 10px;
     padding: 5px;
+}
+
+#time-remaining {
+    text-align: right;
+}
+
+.multiple-choice:hover{
+    background-color: #F5EEC0;
+    color: #725333;
+    border-radius: 10px;
 }
 
 #time-remaining, .question, .answer, #end-game {
