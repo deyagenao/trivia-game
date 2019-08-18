@@ -44,7 +44,7 @@ h3 {
     line-height: 40px;
 }
 
-#start-button {
+#start-button, #restart-game {
     font-family: 'Raleway', sans-serif;
     font-size: 20px;
     height: 45px;
@@ -64,6 +64,6 @@ h3 {
     border-radius: 10px;
 }
 
-#time-remaining, .question, .answer, #end-game {
+#time-remaining, #end-game {
     display: none;
 }

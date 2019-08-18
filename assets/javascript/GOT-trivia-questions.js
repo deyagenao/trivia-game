@@ -1,17 +1,55 @@
-var question1 = {
+var questions = [{
     question: 'The Braavos saying "Valur Morghulis" translates to...',
-    choices: ["All men must serve", "Praise the Many Faced God", "All men must die", "Praise the Braavosi"],
-    correctAnswer: "All men must die",
+    choices: ["a) All men must serve", "b) Praise the Many Faced God", "c) All men must die", "d) Praise the Braavosi"],
+    correctAnswer: "c) All men must die",
+    correctAnswerGifUrl: "",
+},
+{
+    question: "Who was responsible for the death of Rob Stark and ?",
+    choices: ["a)", "b)", "c)", "d)"],
+    correctAnswer: "",
+    correctAnswerGifUrl: "",
+},
+{
+    question: "Daenerys Targarean is referred to all of the following, EXCEPT...",
+    choices: [""],
+    correctAnswer: "",
+    correctAnswerGifUrl: "",
+},
+{
+    question: "After traveling North of the Wall, Brandon Stark becomes ...",
+    choices: [""],
+    correctAnswer: "",
+    correctAnswerGifUrl: "",
+},
+{
+    question: "Who was responsible for the death of Rob Stark and ?",
+    choices: [""],
+    correctAnswer: "",
+    correctAnswerGifUrl: "",
+},
+{
+    question: "Who was responsible for the death of Rob Stark and ?",
+    choices: [""],
+    correctAnswer: "",
+    correctAnswerGifUrl: "",
+},
+{
+    question: "Who was responsible for the death of Rob Stark and ?",
+    choices: [""],
+    correctAnswer: "",
+    correctAnswerGifUrl: "",
+},
+{
+    question: "Who defeated the Night King?",
+    choices: ["Arya Stark", "Jon Snow", "Daenerys Targaryen", "Brandon Stark"],
+    correctAnswer: "Arya Stark",
+    correctAnswerGifUrl: "",
+},
+{
+    question: 'Complete this famous line: "When you play the Game of Thrones..."',
+    choices: ["you fly, or you fry.", "everyone is your enemy.", "you answer to no one.", "you win, or you die."],
+    correctAnswer: "you win, or you die.",
     correctAnswerGifUrl: "",
 }
-
-// Who was responsible for the death of Rob Stark and ?
-// Daenerys Targarean is referred to all of the following, EXCEPT... 
-// After traveling North of the Wall, Brandon Stark becomes ...
-// Who was responsible for defeating the Night King 
-
-var question10 = {
-    question: 'Complete this famous line: "When you play the Game of Thrones..."',
-    choices: ["A) you fly, or you fry.", "B) everyone is your enemy.", "C) you answer to no one.", "D) you win, or you die."],
-    correctAnswer: "D) you win, or you die.",
-}
+]
