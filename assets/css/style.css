@@ -67,3 +67,9 @@ h3 {
 #time-remaining, #end-game {
     display: none;
 }
+
+.answer-image {
+    text-align: center;
+    height: 200px;
+    width: auto;
+}
