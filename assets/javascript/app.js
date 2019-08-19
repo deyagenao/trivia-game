@@ -80,7 +80,7 @@ var questions = [{
 //===========================================================================================================================
 // Function for the timer that runs for each question
 function runTimeLeft() {
-    // clearInterval(intervalID);
+    stopTimer();
     // reset timer for 30 seconds 
     timeRemainingSeconds = 30;
     intervalID = setInterval(decrement, 1000);
@@ -93,12 +93,13 @@ function decrement() {
     timeRemainingSeconds--;
     // when the time remaining reaches 0 seconds, then stop 
     if (timeRemainingSeconds === 0) {
-        stopTimer();
+        clearInterval(intervalId);
     }
 }
 var stopTimer = function() {
     clearInterval(intervalId);
 }
+
 /////////////////
 // Attaching an event handler (function) to the start button
 $("#start-button").on("click", function() {
@@ -137,8 +138,6 @@ var displayAnswer = function() {
     $("#question-element").empty();
     // clear the choices from the display
     $("#choices-element").empty();
-    // stop the timer
-    stopTimer();
     // displaying the correct answer for the user 
     $("#correct-answer-element").text(
       "The correct answer was: " + questions[questionCounter].correctAnswer
@@ -176,6 +175,8 @@ $(document).on("click", ".multiple-choice", function() {
     // increase number of incorrect answers
     incorrectAnswers++;
   };
+  // stop the timer 
+  clearInterval(intervalId);
   // automatically display the answer page
   displayAnswer();
 });
@@ -183,9 +184,9 @@ $(document).on("click", ".multiple-choice", function() {
 /////////////////
 // Function for ending the game 
 // The game will end when the questions are complete, which is equal to the total number of objects in the questions array 
-// if (questionCounter === questions.length) {
+if (questionCounter === questions.length) {
     
-// }
+}
 //Display the total number correct at the end of the game
 
 /////////////////
