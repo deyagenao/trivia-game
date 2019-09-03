@@ -1,8 +1,11 @@
 // Global Variables
 //===========================================================================================================================
 // Reference for the timer
-var timeRemainingSeconds = 30;
-var intervalId;
+var timeRemainingSecondsStart = 30;
+// to count down the seconds
+var counter;
+// to hold the setInterval
+var timer;
 // Reference for showing the answer screen only for a given amount of time
 var displayAnswerTimeout;
 // Counter for correct answers
@@ -79,25 +82,20 @@ var questions = [{
 // Function Definitions & Calls
 //===========================================================================================================================
 // Function for the timer that runs for each question
-function runTimeLeft() {
-    stopTimer();
-    // reset timer for 30 seconds 
-    timeRemainingSeconds = 30;
-    intervalID = setInterval(decrement, 1000);
-}
-// Decrement function that will actually decrease the number of seconds and display on the screen
-function decrement() {
-    //display the number in the "time remaining text" box
-    $("#time-remaining").text("Time Remaining: " + timeRemainingSeconds);
-    //decrease seconds by 1 
-    timeRemainingSeconds--;
-    // when the time remaining reaches 0 seconds, then stop 
-    if (timeRemainingSeconds === 0) {
-        clearInterval(intervalId);
+counter = timeRemainingSecondsStart;
+function runTimeLeft () {
+    $("#time-remaining").text("Time Remaining: " + counter);
+    counter--;
+    if (counter === 0) {
+        timeUp();
     }
 }
-var stopTimer = function() {
-    clearInterval(intervalId);
+
+// function for when time is up 
+function timeUp () {
+     // if the timer reaches 0 seconds, automatically move onto displaying the answer for the current question
+    clearInterval(timer);
+    displayAnswer();
 }
 
 /////////////////
@@ -105,6 +103,8 @@ var stopTimer = function() {
 $("#start-button").on("click", function() {
     // start button is hidden
   $("#start-game").hide();
+  // show the timer
+  $("#time-remaining").text("Time Remaining: " + counter);
   // first question is displayed
     displayQuestion();
 });
@@ -112,10 +112,11 @@ $("#start-button").on("click", function() {
 /////////////////
 // function for displaying each question
 var displayQuestion = function () {
-    // display the timer to show the time left to answer the question
-    $("#time-remaining").show();
+    // reset the timer
+    counter = timeRemainingSecondsStart;
     // begin the timer 
-    runTimeLeft();
+    timer = setInterval(runTimeLeft, 1000)
+    // runTimeLeft();
     // display the question on the page with h3 formatting
     $("#question-element").html("<h3>" + questions[questionCounter].question + "</h3>");
     // display the choices for the question
@@ -127,7 +128,6 @@ var displayQuestion = function () {
         // appending each new paragraph with each multiple choice to the choices element to display on the page 
         $("#choices-element").append(newChoice);
     }
-    // if the timer reaches 0 seconds, automatically move onto displaying the answer for the current question
     
 }
 
@@ -156,7 +156,11 @@ var displayAnswer = function() {
         // increase the question counter to move onto the next question
         questionCounter++;
         // run the displayQuestion function to move onto the next question 
+        if (questionCounter < questions.length){
         displayQuestion();
+        } else {
+            endGame();
+        }
     }, 4000);
 }
 
@@ -176,7 +180,7 @@ $(document).on("click", ".multiple-choice", function() {
     incorrectAnswers++;
   };
   // stop the timer 
-  clearInterval(intervalId);
+  clearInterval(timer);
   // automatically display the answer page
   displayAnswer();
 });
@@ -184,13 +188,25 @@ $(document).on("click", ".multiple-choice", function() {
 /////////////////
 // Function for ending the game 
 // The game will end when the questions are complete, which is equal to the total number of objects in the questions array 
-if (questionCounter === questions.length) {
-    
+function endGame() {
+    $("#end-game").show();
+    $("#total-correct-text").text(correctAnswers + " out of 10");
+    $("#total-incorrect-text").text(incorrectAnswers + " out of 10");
+    $("#total-unanswered-text").text(unanswered + " out of 10");
 }
-//Display the total number correct at the end of the game
+
 
 /////////////////
 //On-click function for restarting the game
-// $("#restart-game").on("click", function(){
-
-// })
+$("#restart-game").on("click", function(){
+    // remove end game screen 
+    $("#end-game").hide();
+    // reset variables 
+    correctAnswers = 0;
+    incorrectAnswers = 0;
+    unanswered = 0;
+    questionCounter = 0;
+    // display start screen again 
+    $("#time-remaining").empty();
+    $("#start-game").show();
+})

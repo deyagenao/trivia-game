@@ -48,10 +48,14 @@ h3 {
     font-family: 'Raleway', sans-serif;
     font-size: 20px;
     height: 45px;
-    width: 85px;
+    width: 100px;
     margin: 15px;
     border-radius: 10px;
     padding: 5px;
+}
+
+#restart-game {
+    width: 150px;
 }
 
 #time-remaining {
@@ -64,7 +68,7 @@ h3 {
     border-radius: 10px;
 }
 
-#time-remaining, #end-game {
+#end-game {
     display: none;
 }
 
