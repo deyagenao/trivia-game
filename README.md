@@ -9,3 +9,6 @@ See if you can answer all of the questions correctly to test your true knowledge
 To build this game, I used jQuery in my javascript code. I included code to generate the timer and the majority of the html seen on the screen. 
 
 The CSS was written by me, with the font additions from Google Fonts. 
+
+### Check out this project below:
+https://deyagenao.github.io/trivia-game/ 
